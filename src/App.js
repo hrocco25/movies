@@ -9,6 +9,8 @@ import Playing from "./pages/playing/playing"
 import Popular from "./pages/popular/popular"
 import Rated from "./pages/rated/rated"
 
+console.log(process.env.REACT_APP_KEY_API_KEY)
+
 class App extends Component {
 
   render(){
