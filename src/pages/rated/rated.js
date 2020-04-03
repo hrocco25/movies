@@ -1,14 +1,43 @@
-import React from "react"
+import React, { Component } from 'react';
+import axios from "axios"
 import "./rated.css"
 
-export const Rated = (props) => {
-  return (
-    <div className='rated'>
-        <h1>rated results </h1>
-        
+class Rated extends Component {
+    constructor() {
+        super();
+        this.state= {
+            movie: []
+        }
+    }
 
-    </div>
-  )
+    componentDidMount() {
+        const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_KEY_API_KEY}&language=en-US&page=1`;
+        axios
+          .get(url)
+          .then(res => {
+            const movie = res.data.results;
+              this.setState({ movie });
+              console.log(this.state.movie)
+          })
+        }
+       
+
+    render(){
+        
+       
+       
+        return (
+            
+            <div className='rated'> 
+                <h1>Top Rated Movies</h1>
+                <div>{this.state.movie.map(data => 
+                    <h3>{data.title}</h3>
+                    
+                )}</div>
+
+            </div>
+        )
+    }
 }
 
 export default Rated

@@ -1,24 +1,15 @@
 import React from "react"
 import { Link } from 'react-router-dom'
+import Search from "../../pages/search/search"
 import "./header.css"
 
-export const Header = (props) => {
+const Header = (props) => {
   return (
     <div className='header'>
-      <Link to ="/">
-        <h1>home</h1>
-      </Link>
-      <Link to ="/popular">
-        <h1>Popular Movies</h1>
-      </Link>
-      <Link to ="/rated">
+        <button></button><h1>Popular Movies</h1>
         <h1>Top Rated</h1>
-      </Link>
-      <Link to ="/playing">
-        <h1>Now Playing</h1>
-      </Link>
-
-
+        <button onclick={props.play}><h1>Now Playing</h1></button>
+        <Search />
     </div>
   )
 }
