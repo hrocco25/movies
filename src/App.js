@@ -3,13 +3,17 @@ import "./App.css";
 import axios from "axios";
 import Button from "./component/button";
 import Movie from "./component/movie";
+import MovieInfo from "./component/movieInfo"
+import Search from "./pages/search/search"
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       category: "now_playing",
-      movie: []
+      movie: [],
+      currentDetail: "",
+      currentMovie: []
     };
   }
 
@@ -21,6 +25,15 @@ class App extends Component {
       this.fetchData()
     );
   };
+
+  changeDetail = (movieSelection) => {
+    this.setState(
+      {
+        currentDetail: movieSelection
+      },
+      this.movieFilter(movieSelection)
+    )
+  }
 
   componentDidMount = () => {
     this.fetchData();
@@ -38,7 +51,19 @@ class App extends Component {
       });
   };
 
+  movieFilter = (name) =>{
+    let movieSelection = this.state.movie.filter((film) => name === film.title);
+    this.setState({
+      currentMovie:movieSelection
+    })
+  }
+
+  
+
   render() {
+    console.log('current movie: ', this.state.currentMovie)
+    console.log('currentDetail: ', this.state.currentDetail)
+    console.log('movie: ', this.state.movie)
     const headings = [
       { buttonText: "Now Playing", urlText: "now_playing" },
       { buttonText: "Top Rated", urlText: "top_rated" },
@@ -52,14 +77,18 @@ class App extends Component {
     });
 
     const movieList = this.state.movie.map((movieDetails, i) => {
-      return <Movie film={movieDetails} key={i} />;
+      return <Movie film={movieDetails} key={i} details={this.changeDetail} />;
     });
+
+
 
     return (
       <div className="App">
-        {categories}
-
+        <div>{categories}</div>
+        <div><Search /></div>
         <div>{movieList}</div>
+       <MovieInfo currentData={this.state.currentMovie[0]} />
+     
       </div>
     );
   }
