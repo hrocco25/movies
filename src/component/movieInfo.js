@@ -9,9 +9,10 @@ const MovieInfo = props => {
       <div>
         <h3>{props.currentData.title}</h3>
         <img src= {`https://image.tmdb.org/t/p/w500/${props.currentData.poster_path}`} alt={props.currentData.title}></img>
-        <p>{props.currentData.overview}</p>
         <p>Rating: {props.currentData.vote_average}</p>
         <p>{props.currentData.release_date}</p>
+        <p>{props.currentData.overview}</p>
+        
 
       </div>
     )

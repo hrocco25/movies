@@ -75,6 +75,7 @@ class Search extends Component {
     render(){
           console.log('current movie: ', this.state.currentMovie)
         console.log('selected Movie array: ', this.state.selectedMovie)
+        console.log('results ', this.state.results)
       
         const { query } = this.state
         return (
@@ -91,7 +92,7 @@ class Search extends Component {
                     />
                 </label>
                 {this.renderSearchResults()}
-                <MovieInfo currentData={this.state.currentMovie[0]} />
+                <MovieInfo currentData={this.state.selectedMovie[0]} />
             </div>
         )
     }

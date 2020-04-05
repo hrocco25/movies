@@ -103,11 +103,13 @@ class App extends Component {
       return (
         <div className="App">
           <Header />
-          <div>{categories}</div>
+          <div className="categories">{categories}</div>
           <div>{this.renderCategory}</div>
-
-          <div>{movieList}</div>
-          <MovieInfo currentData={this.state.currentMovie[0]} />
+          <div className="content">
+            <div className="movieList">{movieList}</div>
+            <div className="currentMovie"><MovieInfo currentData={this.state.currentMovie[0]} /></div>
+            
+          </div>
         </div>
       );
     }
