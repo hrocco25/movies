@@ -3,8 +3,9 @@ import "./App.css";
 import axios from "axios";
 import Button from "./component/button";
 import Movie from "./component/movie";
-import MovieInfo from "./component/movieInfo"
-import Search from "./pages/search/search"
+import MovieInfo from "./component/movieInfo";
+import Search from "./component/search";
+import Header from "./component/header/header";
 
 class App extends Component {
   constructor(props) {
@@ -26,14 +27,14 @@ class App extends Component {
     );
   };
 
-  changeDetail = (movieSelection) => {
+  changeDetail = movieSelection => {
     this.setState(
       {
         currentDetail: movieSelection
       },
       this.movieFilter(movieSelection)
-    )
-  }
+    );
+  };
 
   componentDidMount = () => {
     this.fetchData();
@@ -51,28 +52,34 @@ class App extends Component {
       });
   };
 
-  movieFilter = (name) =>{
-    let movieSelection = this.state.movie.filter((film) => name === film.title);
+  movieFilter = name => {
+    let movieSelection = this.state.movie.filter(film => name === film.title);
     this.setState({
-      currentMovie:movieSelection
-    })
-  }
+      currentMovie: movieSelection
+    });
+  };
 
-  
+
 
   render() {
-    console.log('current movie: ', this.state.currentMovie)
-    console.log('currentDetail: ', this.state.currentDetail)
-    console.log('movie: ', this.state.movie)
+    // console.log('current movie: ', this.state.currentMovie)
+    // console.log('currentDetail: ', this.state.currentDetail)
+    // console.log('movie: ', this.state.movie)
+    console.log(this.state.category);
     const headings = [
       { buttonText: "Now Playing", urlText: "now_playing" },
       { buttonText: "Top Rated", urlText: "top_rated" },
-      { buttonText: "Most Popular", urlText: "popular" }
+      { buttonText: "Most Popular", urlText: "popular" },
+      { buttonText: "Search", urlText: "search" }
     ];
 
     const categories = headings.map((category, i) => {
       return (
-        <Button movieCategory={category} key={i} change={this.changeCategory} />
+        <Button
+          movieCategory={category}
+          key={i}
+          changeURL={this.changeCategory}
+        />
       );
     });
 
@@ -80,17 +87,30 @@ class App extends Component {
       return <Movie film={movieDetails} key={i} details={this.changeDetail} />;
     });
 
+    if (this.state.category === "search") {
+      return (
+        <div className="App">
+          <Header />
+          <div>{categories}</div>
+          <div>{this.renderCategory}</div>
 
+          <div>
+            <Search />
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className="App">
+          <Header />
+          <div>{categories}</div>
+          <div>{this.renderCategory}</div>
 
-    return (
-      <div className="App">
-        <div>{categories}</div>
-        <div><Search /></div>
-        <div>{movieList}</div>
-       <MovieInfo currentData={this.state.currentMovie[0]} />
-     
-      </div>
-    );
+          <div>{movieList}</div>
+          <MovieInfo currentData={this.state.currentMovie[0]} />
+        </div>
+      );
+    }
   }
 }
 

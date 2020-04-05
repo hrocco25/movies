@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import './search.css';
+import MovieInfo from './movieInfo'
 
 
 class Search extends Component {
@@ -10,8 +10,26 @@ class Search extends Component {
         this.state= {
             query: '',
             results: {},
+            selectedMovie: [],
+            currentMovie: ''
         }
     }
+
+    changeDetail = (movieSelection) => {
+        this.setState(
+            {
+            currentMovie: movieSelection
+            },
+            this.selectedFilter(movieSelection)
+            )
+        }
+
+    selectedFilter = (name) =>{
+        let movieSelection = this.state.results.filter((film) => name === film.title);
+        this.setState({
+          selectedMovie:movieSelection
+        })
+      }
 
     fetchSearchResults = ( query ) => {
         const searchUrl= `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_KEY_API_KEY}&language=en-US&page=1&query=${query}&include_adult=false`
@@ -43,8 +61,7 @@ class Search extends Component {
                 <div className='results-container'>
                     {results.map( result => {
                         return(
-                            <div key= { result.id } className="result-item" style={{border: "black solid .1em"}}>
-                                <a className='title' href= { result.title } target="_blank" rel="noopener noreferrer">{result.name}</a>
+                            <div key= { result.id } className="result-item" onClick={() => this.changeDetail(result.title)}>
                                 <p>{result.title}</p>
                                
                             </div>
@@ -56,6 +73,9 @@ class Search extends Component {
     }
 
     render(){
+          console.log('current movie: ', this.state.currentMovie)
+        console.log('selected Movie array: ', this.state.selectedMovie)
+      
         const { query } = this.state
         return (
             <div className="container">
@@ -71,6 +91,7 @@ class Search extends Component {
                     />
                 </label>
                 {this.renderSearchResults()}
+                <MovieInfo currentData={this.state.currentMovie[0]} />
             </div>
         )
     }

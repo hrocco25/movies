@@ -4,7 +4,7 @@ const Button = props => {
   return (
     <div
       className="button"
-      onClick={() => props.change(props.movieCategory.urlText)}
+      onClick={() => props.changeURL(props.movieCategory.urlText)}
     >
       <div>{props.movieCategory.buttonText}</div>
     </div>
