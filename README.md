@@ -16,7 +16,7 @@ The Movie Guide is a single page application that uses a MovieDB API to search f
 
 ## Wireframes
 
-<img src="https://user-images.githubusercontent.com/49919405/78610998-3b29b900-7823-11ea-8e70-0909f0cf878b.jpg
+<img src="https://user-images.githubusercontent.com/49919405/78611913-3c5be580-7825-11ea-92bb-702990c1d497.jpg"
 " height='200' width='200'>
 
 <img src="https://user-images.githubusercontent.com/49919405/78611747-de2f0280-7824-11ea-8554-800547ef3965.jpg" height='200' width='200'>
