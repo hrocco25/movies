@@ -5,14 +5,14 @@
 .content{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 7%;
+  margin: 3% 7%;
  
 }
 
 .categories{
   display: flex;
   justify-content: space-around;
-  margin: 0 15% 2% 15%;
+  margin: 0 15% 0 15%;
 }
 
 .button{
