@@ -41,7 +41,8 @@ class App extends Component {
   };
 
   fetchData = () => {
-    const url = `https://api.themoviedb.org/3/movie/${this.state.category}?api_key=${process.env.REACT_APP_KEY_API_KEY}&language=en-US&page=1`;
+    let key =process.env.REACT_APP_KEY_API_KEY
+    const url = `https://api.themoviedb.org/3/movie/${this.state.category}?api_key=${key}&language=en-US&page=1`;
     axios
       .get(url)
       .then(res => {
