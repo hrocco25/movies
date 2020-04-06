@@ -4,7 +4,7 @@ import axios from "axios";
 import Button from "./component/button";
 import Movie from "./component/movie";
 import MovieInfo from "./component/movieInfo";
-import Search from "./component/search";
+import Search from "./component/search/search";
 import Header from "./component/header/header";
 
 class App extends Component {

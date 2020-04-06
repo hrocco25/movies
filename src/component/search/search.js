@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import MovieInfo from './movieInfo'
+import MovieInfo from '../movieInfo'
 
 
 class Search extends Component {
