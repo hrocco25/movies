@@ -22,11 +22,11 @@ The Movie Guide is a single page application that uses a MovieDB API to search f
 
 
 #### MVP
-- now playing
-- popular
-- top rated
-- search
-- move details
+- Now playing
+- Popular
+- Top rated
+- Search
+- Movie details
 
 #### PostMVP
 
@@ -34,6 +34,7 @@ The Movie Guide is a single page application that uses a MovieDB API to search f
 - Add pagination 
 - Add more testing
 - Add move CSS for styling
+- Mobile friendly 
 
 ## Components
 
@@ -49,13 +50,13 @@ The Movie Guide is a single page application that uses a MovieDB API to search f
 ## Questions to keep in mind
 
 - What design patterns did you use?
-    - I used a function for axios that would change where the url would go depending on state. 
+    - I used a function for axios that would change where the URL would go depending on state. 
 - How would you test your application?
-    - I tested my app with Jest by adding test files to check for certain criteria to be on certain page.  Also, I tested the app on several browsers and had users test the site.  
+    - I tested my app with Jest by adding test files to check for certain criteria to be on a certain page.  Also, I tested the app on several browsers and had users test the site.  
 - How do you manage/store application state?
     - I managed state in app.js and and search.js.  I did this because that is where I did my axios call.  I updated state with functions depending on what the user clicked on the app. I passed down props to certain components with state information as well.    
 - What ways could you structure the code to make it easy to understand maintain?
-    - I could remove the axios call and state from search.js.  This would make it easier to maintain in the future and understand how the app works if another engineering came to look at the code.
+    - I could remove the axios call and state from search.js.  This would make it easier to maintain in the future and improve the level of readability for another engineer.
 - What other considerations and tradeoffs did you make when building the application?
     - I focused more on getting the app to work the way I wanted versus spending time on the design and layout of the app.  I plan to add more styling to the app in the future.   
 
