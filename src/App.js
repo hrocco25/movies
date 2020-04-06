@@ -91,8 +91,8 @@ class App extends Component {
       return (
         <div className="App">
           <Header />
-          <div>{categories}</div>
-          <div>{this.renderCategory}</div>
+          <div className="categories">{categories}</div>
+          <div className="content">{this.renderCategory}</div>
 
           <div>
             <Search />

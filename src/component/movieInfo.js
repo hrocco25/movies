@@ -3,7 +3,7 @@ import React from "react";
 const MovieInfo = props => {
   console.log(props.currentData)
   if(!props.currentData){
-    return(<div>Please Select a Movie</div>)
+    return(<div className="pleaseSelect">Please Select a Movie</div>)
   }else{
     return(
       <div>

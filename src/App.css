@@ -5,6 +5,8 @@
 .content{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin: 7%;
+ 
 }
 
 .categories{
@@ -22,6 +24,29 @@
   background-color: lightseagreen;
 }
 
+.currentMovie{
+  margin: 0 0 0 5%;
+  border: solid .1em lightseagreen;
+  padding: 3%;
+}
+
 .currentMovie img{
   height: 75vh;
+}
+
+.movie{
+  margin: 0 5% 2% 0;
+  border: solid .1em lightseagreen;
+}
+
+.movie:hover{
+  background-color: lightgray;
+}
+
+/* .pleaseSelect{
+  text-align: center;
+} */
+
+.search{
+  margin:0;
 }

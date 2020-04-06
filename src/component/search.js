@@ -61,7 +61,7 @@ class Search extends Component {
                 <div className='results-container'>
                     {results.map( result => {
                         return(
-                            <div key= { result.id } className="result-item" onClick={() => this.changeDetail(result.title)}>
+                            <div key= { result.id } className="movie" onClick={() => this.changeDetail(result.title)}>
                                 <p>{result.title}</p>
                                
                             </div>
@@ -73,26 +73,26 @@ class Search extends Component {
     }
 
     render(){
-          console.log('current movie: ', this.state.currentMovie)
+        console.log('current movie: ', this.state.currentMovie)
         console.log('selected Movie array: ', this.state.selectedMovie)
         console.log('results ', this.state.results)
       
         const { query } = this.state
         return (
-            <div className="container">
-                <label className="search-label" htmlFor="search-input">
+            <div>
+                <label className="search" htmlFor="search-input">
                     <input 
-                        className='search-input'
-                        type="text"
-                        name= "query"
+                        type="text"  
                         value= {query}
-                        id="search-input"
                         placeholder='Search...'
                         onChange={this.handleOnInputChange}
                     />
                 </label>
-                {this.renderSearchResults()}
-                <MovieInfo currentData={this.state.selectedMovie[0]} />
+                <div className="content">
+                   <div>{this.renderSearchResults()}</div>
+                    <div className="currentMovie"><MovieInfo currentData={this.state.selectedMovie[0]} /></div> 
+                </div>
+                
             </div>
         )
     }
