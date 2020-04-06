@@ -16,7 +16,10 @@ The Movie Guide is a single page application that uses a MovieDB API to search f
 
 ## Wireframes
 
-<img src="https://user-images.githubusercontent.com/49919405/71772381-6f7d9880-2f07-11ea-9d5f-458e0a8031ae.jpg" height='200' width='200'>
+<img src="https://user-images.githubusercontent.com/49919405/78610998-3b29b900-7823-11ea-8e70-0909f0cf878b.jpg
+" height='200' width='200'>
+
+<img src="https://user-images.githubusercontent.com/49919405/78611081-644a4980-7823-11ea-86c0-7bcf4bf9332a.jpg" height='200' width='200'>
 
 
 #### MVP
@@ -61,14 +64,17 @@ The Movie Guide is a single page application that uses a MovieDB API to search f
 ## Code Snippet
 
 ```
+movieFilter = name => {
+    let movieSelection = this.state.movie.filter(film => name === film.title);
+    this.setState({
+      currentMovie: movieSelection
+    });
+  };
 
+  //filters out the current movie the user choose to set the state so the user can see more information about the movie
 	
 ```
 
-```
-
-	
-```
 
 ## Issues and Resolutions
 
