@@ -59,13 +59,7 @@ class App extends Component {
     });
   };
 
-
-
   render() {
-    // console.log('current movie: ', this.state.currentMovie)
-    // console.log('currentDetail: ', this.state.currentDetail)
-    // console.log('movie: ', this.state.movie)
-    console.log(this.state.category);
     const headings = [
       { buttonText: "Now Playing", urlText: "now_playing" },
       { buttonText: "Top Rated", urlText: "top_rated" },
@@ -107,8 +101,9 @@ class App extends Component {
           <div>{this.renderCategory}</div>
           <div className="content">
             <div className="movieList">{movieList}</div>
-            <div className="currentMovie"><MovieInfo currentData={this.state.currentMovie[0]} /></div>
-            
+            <div className="currentMovie">
+              <MovieInfo currentData={this.state.currentMovie[0]} />
+            </div>
           </div>
         </div>
       );
