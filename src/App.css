@@ -10,14 +10,16 @@
 }
 
 .categories{
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   margin: 0 15% 0 15%;
 }
 
 .button{
   border: solid .1em black;
-  padding: 3%
+  padding: 3%;
+  margin: 0 2%;
+  text-align: center;
 }
 
 .button:hover{

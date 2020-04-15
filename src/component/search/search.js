@@ -76,7 +76,6 @@ class Search extends Component {
     const { query } = this.state;
     return (
       <div>
-        <h3>Search For a Movie</h3>
         <label className="search" htmlFor="search-input">
           <input
             type="text"

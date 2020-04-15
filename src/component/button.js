@@ -1,14 +1,37 @@
 import React from "react";
 
 const Button = props => {
-  return (
-    <div
-      className="button"
-      onClick={() => props.changeURL(props.movieCategory.urlText)}
-    >
-      <div>{props.movieCategory.buttonText}</div>
+
+    if(props.selectedCategory === props.movieCategory.urlText){
+      return (
+        <div>
+        <div
+          className="color button" 
+          onClick={() => props.changeURL(props.movieCategory.urlText)}
+        >
+          <div>{props.movieCategory.buttonText}</div>
+        </div>
+          <style jsx>
+            {`.color{
+              background-color: pink;
+            }`}
+          </style>
+       
+      </div>
+      )
+    }else return (
+      <div>
+      <div
+        className="button"
+        onClick={() => props.changeURL(props.movieCategory.urlText)}
+      >
+        <div>{props.movieCategory.buttonText}</div>
+      </div>
+     
     </div>
-  );
+    )
+  
+
 };
 
 export default Button;

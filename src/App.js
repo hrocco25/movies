@@ -14,14 +14,14 @@ class App extends Component {
       category: "now_playing",
       movie: [],
       currentDetail: "",
-      currentMovie: []
+      currentMovie: [],
     };
   }
 
   changeCategory = selection => {
     this.setState(
       {
-        category: selection
+        category: selection,
       },
       this.fetchData()
     );
@@ -30,11 +30,14 @@ class App extends Component {
   changeDetail = movieSelection => {
     this.setState(
       {
-        currentDetail: movieSelection
+        currentDetail: movieSelection,
       },
       this.movieFilter(movieSelection)
     );
   };
+
+
+
 
   componentDidMount = () => {
     this.fetchData();
@@ -59,6 +62,16 @@ class App extends Component {
     });
   };
 
+  title =() =>{
+    if(this.state.category === "now_playing") {
+      return <h2>Now Playing</h2>
+    }else if (this.state.category === "popular") {
+      return <h2> Popular</h2>
+    }else if (this.state.category === "search") {
+      return <h2>Search For a Movie</h2>
+    }else return <h2>Top Rated</h2>
+  }
+
   render() {
     const headings = [
       { buttonText: "Now Playing", urlText: "now_playing" },
@@ -69,23 +82,28 @@ class App extends Component {
 
     const categories = headings.map((category, i) => {
       return (
-        <Button
-          movieCategory={category}
-          key={i}
-          changeURL={this.changeCategory}
-        />
+        <div>
+          <Button
+            selectedCategory={this.state.category}
+            movieCategory={category}
+            key={i}
+            changeURL={this.changeCategory}
+          />
+        </div>
       );
     });
 
     const movieList = this.state.movie.map((movieDetails, i) => {
       return <Movie film={movieDetails} key={i} details={this.changeDetail} />;
     });
+ 
 
     if (this.state.category === "search") {
       return (
         <div className="App">
           <Header />
           <div className="categories">{categories}</div>
+          <div>{this.title()}</div>
           <div className="content">{this.renderCategory}</div>
 
           <div>
@@ -98,6 +116,7 @@ class App extends Component {
         <div className="App">
           <Header />
           <div className="categories">{categories}</div>
+          <div>{this.title()}</div>
           <div>{this.renderCategory}</div>
           <div className="content">
             <div className="movieList">{movieList}</div>
