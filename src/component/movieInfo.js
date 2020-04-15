@@ -2,10 +2,15 @@ import React from "react";
 
 const MovieInfo = props => {
   if (!props.currentData) {
-    return <div className="pleaseSelect">Please Select a Movie</div>;
+    return (
+      <div className="select">
+        <h3>Please Select a Movie</h3>
+        <img src="modern.jpg" alt="modern cinema" className="selectImg"></img>
+      </div>
+    )
   } else {
     return (
-      <div>
+      <div className="select">
         <h3>{props.currentData.title}</h3>
         <img
           src={`https://image.tmdb.org/t/p/w500/${props.currentData.poster_path}`}

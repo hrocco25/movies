@@ -2,6 +2,19 @@
   text-align: center;
 }
 
+.header img{
+  background-size: cover;
+  max-width: 100%;
+}
+
+.header h1{
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color:white;
+}
+
 .content{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -23,31 +36,37 @@
 }
 
 .button:hover{
-  background-color: lightseagreen;
+  background-color: #7E1F23;
 }
 
 .currentMovie{
   margin: 0 0 0 5%;
-  border: solid .1em lightseagreen;
+  border: solid .17em #7E1F23;
   padding: 3%;
+  background-color: silver;
 }
 
 .currentMovie img{
   height: 45vh;
+  border: black solid .15em;
 }
 
 .movie{
   margin: 0 5% 2% 0;
-  border: solid .1em lightseagreen;
+  border: solid .17em #7E1F23;
 }
 
 .movie:hover{
-  background-color: lightgray;
+  background-color: silver;
 }
 
-/* .pleaseSelect{
-  text-align: center;
-} */
+.selectImg{
+  border: .15em black solid;
+  width: 70%;
+  height: 50%;
+}
+
+
 
 .search{
   margin:0;
