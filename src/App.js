@@ -103,7 +103,7 @@ class App extends Component {
         <div className="App">
           <Header />
           <div className="categories">{categories}</div>
-          <div>{this.title()}</div>
+          <div className="title searchTitle" >{this.title()}</div>
           <div className="content">{this.renderCategory}</div>
 
           <div>

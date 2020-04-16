@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   background-color: black;
+  padding-bottom: 5%;
+
 
 }
 
@@ -19,10 +21,12 @@ p{
 
 .header h1{
   position: absolute;
-  top: 8%;
+  top: 2.5%;
   left: 50%;
   transform: translate(-50%, -50%);
   color:silver;
+  font-size: 2.2em;
+  text-shadow: black 2px 2px;
   
 }
 
@@ -62,9 +66,9 @@ p{
 
 .currentMovie{
   margin: 0 0 0 5%;
-  border: solid .17em #7E1F23;
+  border: solid .17em black;
   padding: 3%;
-  background-color: #7E1F23;
+  background-color: silver;
 }
 
 .currentMovie img{
@@ -75,24 +79,20 @@ p{
 
 .movie{
   margin: 0 5% 2% 0;
-  border: solid .17em #7E1F23;
-  background-color: #7E1F23;
+  border: solid .17em black;
+  background-color: silver;
 }
 
 .movie:hover{
-  background-color: #DCDCDC;
+  background-color: #7E1F23;
 }
 
-
-
-.search{
-  margin:0;
-}
 
 .search input{
   height: 1.5em;
   font-size: 1em;
 }
+
 
 @media only screen and (min-width: 768px){
 

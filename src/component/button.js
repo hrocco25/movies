@@ -13,7 +13,7 @@ const Button = props => {
         </div>
           <style jsx>
             {`.color{
-              background-color: silver;
+              background-color: #7E1F23;
             }`}
           </style>
        
