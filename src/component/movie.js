@@ -7,7 +7,7 @@ const Movie = props => {
         <h2>{props.category}</h2>
       </div>
       <div onClick={() => props.details(props.film.title)}>
-        <h3>{props.film.title}</h3>
+        <h4>{props.film.title}</h4>
       </div>
     </div>
   );

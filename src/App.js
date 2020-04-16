@@ -116,7 +116,7 @@ class App extends Component {
         <div className="App">
           <Header />
           <div className="categories">{categories}</div>
-          <div>{this.title()}</div>
+          <div className="title">{this.title()}</div>
           <div>{this.renderCategory}</div>
           <div className="content">
             <div className="movieList">{movieList}</div>

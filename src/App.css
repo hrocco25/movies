@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: black;
+
 }
 
 .header img{
@@ -7,12 +9,25 @@
   max-width: 100%;
 }
 
+h1,h2,h3,h4{
+  font-family: 'Manrope', sans-serif;
+}
+
+p{
+  font-family: 'PT Serif', serif;
+}
+
 .header h1{
   position: absolute;
   top: 8%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color:white;
+  color:silver;
+  
+}
+
+.title{
+  color: silver;
 }
 
 .content{
@@ -24,15 +39,21 @@
 
 .categories{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template: repeat(1, 2fr) / repeat(2,1fr) ;
   margin: 0 15% 0 15%;
+
 }
+
+
+
 
 .button{
   border: solid .1em black;
-  padding: 3%;
-  margin: 0 2%;
+  padding: 4%;
+  margin: 2% 2%;
   text-align: center;
+  background-color: silver;
+  
 }
 
 .button:hover{
@@ -43,31 +64,45 @@
   margin: 0 0 0 5%;
   border: solid .17em #7E1F23;
   padding: 3%;
-  background-color: silver;
+  background-color: #7E1F23;
 }
 
 .currentMovie img{
-  height: 45vh;
+  max-height: 45vh;
+  max-width: 20vh;
   border: black solid .15em;
 }
 
 .movie{
   margin: 0 5% 2% 0;
   border: solid .17em #7E1F23;
+  background-color: #7E1F23;
 }
 
 .movie:hover{
-  background-color: silver;
-}
-
-.selectImg{
-  border: .15em black solid;
-  width: 70%;
-  height: 50%;
+  background-color: #DCDCDC;
 }
 
 
 
 .search{
   margin:0;
+}
+
+.search input{
+  height: 1.5em;
+  font-size: 1em;
+}
+
+@media only screen and (min-width: 768px){
+
+  .categories{ 
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .currentMovie img{
+    max-height: 80vh;
+    max-width: 50vh;
+  }
+
 }
