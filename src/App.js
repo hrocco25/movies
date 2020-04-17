@@ -104,7 +104,7 @@ class App extends Component {
           <Header />
           <div className="categories">{categories}</div>
           <div className="title searchTitle" >{this.title()}</div>
-          <div className="content">{this.renderCategory}</div>
+          <div className="content searchContent">{this.renderCategory}</div>
 
           <div>
             <Search />

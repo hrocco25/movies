@@ -48,6 +48,10 @@ p{
 
 }
 
+.select{
+ 
+}
+
 
 
 
@@ -91,6 +95,10 @@ p{
 .search input{
   height: 1.5em;
   font-size: 1em;
+}
+
+.searchContent{
+  margin: 0;
 }
 
 
